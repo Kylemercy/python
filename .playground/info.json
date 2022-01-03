@@ -1,0 +1,4 @@
+like = 43
+like = 71
+like = 28
+print(like)
