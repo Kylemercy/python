@@ -1,4 +1,5 @@
-like = 43
-like = 71
-like = 28
-print(like)
+like1 = 43
+like2 = 71
+like3 = 20
+result = int(like1) + int(like2) + int(like3)
+ print(result)
