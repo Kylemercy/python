@@ -1,10 +1,9 @@
-ix = 0 
-fruit = input("name a fruit: ")
-while ix < len(fruit):
- letter = fruit[ix]
- print(letter)
- ix += 1
-prefixes = "JKLMNOPQ"
-suffix = "ack" 
-for p in prefixes: 
-  print(p + suffix)
+name = "mercy","joy","sandra"
+age = 12,14,18
+ini = "me","jy","sd"
+txt = zip(name,age,ini)
+
+print(list(txt))
+print (tuple(txt))
+for item in txt:
+  print(list(item))
