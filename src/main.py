@@ -1,18 +1,7 @@
-
-x = int(input())
-if x % 2 == 0: 
-  print(x, " is even.")
-  print("Did you know that 2 is the only even number that is prime?")
-else:
-  print(x, " is odd.") 
-  print("Did you know that multiplying two odd numbers " + "always gives an odd result?")
-import math
-import random
-y = int(input("Enter a number: "))
-if y <= 0:
-  print("sorry negative number is not allowed")
-  print("i will use the default number in range 1-10 ")
-  y = random.randint(1,10+1)
-  
-mit =math.sqrt(y)
-print(  "the square root of ", y ,"is", round(mit,2))
+def final_amount(p,n,r,t):
+  a = p*(1 + r//n)**(n*t)
+  return a
+num = float(input("Enter the amount you want to invest: "))
+total = final_amount(num,0.07,9,5)
+total = round(total,2)
+print(f"At the end of the given time,you will have  ${total}")
