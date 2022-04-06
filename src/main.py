@@ -1,20 +1,33 @@
-#Mad lib game
-print("*************************")
-print("Let's play a fun game")
-print("*************************")
-name = input("whats your name?  \n")
-age = int(input("How old are you? \n "))
-book = input("what's your favourite book? \n ")
-colour = input("What's your favourite colour? \n")
-food = input("what's your favourite food? \n")
-sports = input("what's your favourite sports? \n")
-celebrity = input("who is your favourite celebrity? \n")
-flower = input("what's your favourite flower? \n")
-print(f'''Hi my name is {name},am {age} years old.i love reading alot,my favourite book is {book}!,
-i don't have much hobby but i love reading,and 
-watching YouTube for fun. my favourite colour is {colour} and my favourite food is {food}.
-i also love sports,my favourite sports are {sports},
-My favourite celebrity is {celebrity},am really
-a huge fan,and my favourite flower is {flower}.
-one day i want to meet {celebrity}, it would be the 
-happiest day for me.''')
+
+print("________________________________")
+print("________________________________")
+print("Temperature conversion system")
+print("________________________________")
+print("________________________________")
+print("selections: \n press 1 To enter Celsius \n press2 To enter Fahrenheit \n press 3 To enter Kelvin ")
+select = int(input("Enter your selection: "))
+if select  > 3:
+  print("invalid input")
+if select == 1:
+  temp = float(input("Enter your temperature in Celsius: "))
+  fahrenheit = round((((9/5)*temp)+32),2)
+  Kelvin = round((temp + 273.15),2)
+  print("\n")
+  print("Temperature in Fahrenheit is:", fahrenheit,"fahrenheit,deg")
+  print("Temperature in Kelvin is :", Kelvin,"Kelvin,deg")
+
+elif select  == 2:
+  temp = float(input("Enter your selection in Fahrenheit: "))
+  celsius = round(((5/9)*(temp -32)),2)
+  Kelvin = round(((temp-459.67)*(5/9)),2)
+  print("\n")
+  print("Temperature in Celsius is : ", celsius,"Celsius,deg")
+  print("Temperature in Kelvin is :", Kelvin,"Kelvin,deg")
+ 
+
+elif select == 3:
+  temp = float(input("Enter temperature in Kelvin: "))
+  fahrenheit = round(((temp*(9/5))-459.67),2)
+  celsius = round((temp-273.15), 2)
+  print('Temperature in Farenheit: ', fahrenheit, 'deg F')
+  print('Temperature in Celcius: ', celsius, 'deg C')
