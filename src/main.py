@@ -1,16 +1,41 @@
 import random
-upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-lower = "abcdefghijklmnopqrstuvwxyz"
-number = "0123456789"
-symbol =" @#*.,&!?"
-all = upper+lower+symbol+number
-length = 15
-password = "".join(random.sample(all, length))
-print("The password generated for you is ", password)
-name = input("what's your name? \n")
-s_name = input("what's your surname? \n")
-gmail = "@gmail.com"
-mail =  number + symbol + gmail
-len = 7
-g_mail = "".join(random.sample(mail,len))
-print(f"The email generated for you is {name}{s_name}{g_mail}{gmail}")
+print("xxxxxxxxxxxxxxxxxxx")
+print("Guessing Game!")
+print("xxxxxxxxxxxxxxxxxxx")
+print("Guess the secret number: it has two digits")
+secret_num = str(random.randint(10,99))
+remaining_try = 7
+while remaining_try > 0:
+  guess = (input("Guess the secret number: "))
+
+  if secret_num == guess:
+    print("Congratulations guessed the number correctly!")
+    print("You Win\nGame over")
+    break
+  else:
+    bull = 0
+    cow = 0
+    if secret_num[0] == guess[0]:
+      bull+=1
+    
+    if secret_num[1] == guess[1]:
+      bull += 1
+    
+    if secret_num[1] == guess[0]:
+      cow += 1
+    
+    if secret_num[0] == guess[1]:
+      cow += 1
+    print("Bulls ",bull)
+    print("Cows",cow)
+    remaining_try -= 1
+    if remaining_try <= 1:
+       print("You lost the Game")
+       print("the secret number is ",secret_num)
+       break
+     
+    
+    
+        
+    
+  
