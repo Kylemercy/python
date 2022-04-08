@@ -1,19 +1,13 @@
-def divisible_by_3and5(num):
-  result = [ ]
-  for i in range(num):
-    if i % 3 and i % 5 == 0:
-      result.append(i)
-  return result
 
+def get_sum_of_digits(num):
+  sum = 0
+  while num > 0:
+    last_digit = num % 10
+    sum = sum +last_digit
+    num = num // 10
+  return sum
 
-num = int(input("Enter a number: "))
-total = divisible_by_3and5(num)
-print(f"numbers divisible by 3 and 5 in range {num} are:\n", total)
-    
-  
-
-
-
-
-
+user_num = int(input("Enter a number: "))
+result = get_sum_of_digits(user_num)
+print(f"the sum of the given digits is {result}.")
 
