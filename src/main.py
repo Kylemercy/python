@@ -1,13 +1,7 @@
-
-def get_sum_of_digits(num):
-  sum = 0
-  while num > 0:
-    last_digit = num % 10
-    sum = sum +last_digit
-    num = num // 10
-  return sum
-
-user_num = int(input("Enter a number: "))
-result = get_sum_of_digits(user_num)
-print(f"the sum of the given digits is {result}.")
-
+num = input("Enter a big number :")
+ 
+sum = 0
+for char in num :
+   sum = sum + int(char)
+ 
+print(sum)
