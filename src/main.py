@@ -11,9 +11,6 @@ def dec_to_binary(num):
   for bit in bits:
      binary += str(bit)
   return binary
-  another = int(input("Enter your number in base10: "))
- 
-
   
 num = int(input("Enter your number in base10: "))   
 result = dec_to_binary(num)
