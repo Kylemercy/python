@@ -5,6 +5,6 @@ from datetime import datetime
 now = datetime.now()
  
 
-string = datetime.date(now)
-# returns date of the class
+string = datetime.isocalendar(now)
+# Returns a tuple year, week, and weekday
 print (string)
