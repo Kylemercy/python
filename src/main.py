@@ -1,19 +1,10 @@
-
-# To convert from base 10 to base 2
-def dec_to_binary(num):
-  bits = [ ]
-  while num > 0:
-    bits.append(num % 2)
-    num = num // 2
-  bits.reverse()
+from datetime import datetime
  
-  binary = " "
-  for bit in bits:
-     binary += str(bit)
-  return binary
-  
-num = int(input("Enter your number in base10: "))   
-result = dec_to_binary(num)
-print("you number in base2 is:", result)
-    
+# Getting current date and time
 
+now = datetime.now()
+ 
+
+string = datetime.ctime(now)
+# representation of date and time
+print (string)
