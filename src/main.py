@@ -5,7 +5,6 @@ from datetime import datetime
 now = datetime.now()
  
 
-string = datetime.astimezone(now)
-# Returns the DateTime object containing
-# timezone information.
+string = datetime.date(now)
+# returns date of the class
 print (string)
