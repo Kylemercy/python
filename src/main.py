@@ -5,6 +5,7 @@ from datetime import datetime
 now = datetime.now()
  
 
-string = datetime.isocalendar(now)
-# Returns a tuple year, week, and weekday
+string = datetime.replace(now,2017,3,25)
+print(string.weekday())
+print(string.ctime())
 print (string)
