@@ -5,5 +5,6 @@ from datetime import datetime
 now = datetime.now()
  
 
-string = datetime.time(now)
+string = datetime.timetuple(now)
+#Returns an object of type time.struct_time
 print (string)
