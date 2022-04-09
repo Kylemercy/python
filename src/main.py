@@ -5,7 +5,5 @@ from datetime import datetime
 now = datetime.now()
  
 
-string = datetime.replace(now,2017,3,25)
-print(string.weekday())
-print(string.ctime())
+string = datetime.time(now)
 print (string)
