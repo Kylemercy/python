@@ -1,11 +1,8 @@
-import datetime
-b_day = datetime.date(year= 2000,month = 3,day = 24)
-b_day2 = datetime.date(year = 1988,month= 5,day = 27)
+from datetime import datetime 
+Christmas = datetime(month = 12,day = 25,year = 1)
+today = datetime.today()
+Christmas= Christmas.replace(year = datetime.today().year)
+count = Christmas- today
+print("There are ",count.days,"remaining till Christmas!")
 
-if b_day < b_day2:
-  print("Person one is older")
-elif b_day > b_day2:
-  print("Person two is older")
-else:
-  print("The ae both the same age")
 
