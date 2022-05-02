@@ -1,21 +1,34 @@
-class Cylinder:
-    # class attribute
-    pi = 3.14
-    def __init__(self, radius, height):
-        # instance variables
-        self.radius = radius
-        self.height = height
+class Parent():
+    def __init__(self, hair_color, temper):
+        self.hair_color = hair_color
+        self.temper = temper
+    def sleeping_style(self):
+        print('big fan of nap.')
+  
+class Child(Parent):
+    def __init__(self, hair_color, temper):
+        # call the base class init function
+        #Parent.__init__(self,hair_color, temper )
+        #or using super method
+        super().__init__(hair_color, temper )
+    def sleeping_style(self):
+        # extending the base class method
+        super().sleeping_style()
+        print('tossing and turning.')
+  
  
-    # instance method
-    def volume(self):
-        return Cylinder.pi * self.radius**2 * self.height
- 
-    # class method
-    @classmethod
-    def description(cls):
-        return f'This is a Cylinder class that computes the volume using Pi={cls.pi}'
-c1 = Cylinder(4, 2) # create an instance/object
-print(f'Volume of Cylinder: {c1.volume()}') # access instance method 
-print(Cylinder.description()) # access class method via class
-print(c1.description()) # access class method via instance
-print(type(c1))
+if __name__ == '__main__':
+  
+#this prevent code that is being imported from running
+
+    # create instance of the child class
+    enow = Parent ('black.', 'slow in anger.')
+    enow.sleeping_style()
+    print(enow.hair_color)
+    print(enow.temper)
+    print("***********************************\n")
+    
+    enow = Child('black.', 'slow in anger.')
+    enow.sleeping_style()
+    print(enow.hair_color)
+    print(enow.temper)
