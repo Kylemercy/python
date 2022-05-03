@@ -1,25 +1,25 @@
-# base class
-class Company:
-    def __init__(self):
- # Protected member having a single underscore
-        self._project = "NLP"
-        
-
-# child class
-class Employee(Company):
-    def __init__(self, name):
+#Setters and getters
+class Student:
+    def __init__(self, name, age):
+        # private member
         self.name = name
-        #super().__init__()
-        Company.__init__(self)
-      #this use to inherit the project attribute
+        self.__age = age
 
-    def show(self):
-        print("Employee name :", self.name)
-   # Accessing protected member in child class
-        print("Working on project :", self._project)
+    # getter method
+    def get_age(self):
+        return self.__age
 
-c = Employee("Jessa")
-c.show()
+    # setter method
+    def set_age(self, age):
+        self.__age = age
 
-# Direct access protected data member
-print('Project:', c._project)
+stud = Student('Jessa', 14)
+
+# retrieving age using getter
+print('Name:', stud.name, stud.get_age())
+
+# changing age using setter
+stud.set_age(16)
+
+# retrieving age using getter
+print('Name:', stud.name, stud.get_age())
