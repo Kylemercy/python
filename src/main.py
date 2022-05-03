@@ -1,34 +1,22 @@
-class Parent():
-    def __init__(self, hair_color, temper):
-        self.hair_color = hair_color
-        self.temper = temper
-    def sleeping_style(self):
-        print('big fan of nap.')
-  
-class Child(Parent):
-    def __init__(self, hair_color, temper):
-        # call the base class init function
-        #Parent.__init__(self,hair_color, temper )
-        #or using super method
-        super().__init__(hair_color, temper )
-    def sleeping_style(self):
-        # extending the base class method
-        super().sleeping_style()
-        print('tossing and turning.')
-  
- 
-if __name__ == '__main__':
-  
-#this prevent code that is being imported from running
+class Employee:
+    # constructor
+    def __init__(self, name, salary):
+        # public data member
+        self.name = name
+        # private member
+        self.__salary = salary
+#__is use to create a private object
+        # public instance methods
+    def show(self):
+        # private members are accessible from a class
+        print("Name: ", self.name, 'Salary:', self.__salary)
 
-    # create instance of the child class
-    enow = Parent ('black.', 'slow in anger.')
-    enow.sleeping_style()
-    print(enow.hair_color)
-    print(enow.temper)
-    print("***********************************\n")
-    
-    enow = Child('black.', 'slow in anger.')
-    enow.sleeping_style()
-    print(enow.hair_color)
-    print(enow.temper)
+# creating object of a class
+# creating object of a class
+emp = Employee('Jessa', 10000)
+
+# accessing private data members
+#to Access the private attribute we do this
+#we create a method for the attributes as seen
+#we then call the method
+emp.show() 
