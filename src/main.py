@@ -5,8 +5,8 @@ class Employee:
         self.name = name
         # private member
         self.__salary = salary
-#__is use to create a private object
-        # public instance methods
+#__that is double underscore use to create a private object
+     
     def show(self):
         # private members are accessible from a class
         print("Name: ", self.name, 'Salary:', self.__salary)
