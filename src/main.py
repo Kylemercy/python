@@ -1,34 +1,20 @@
-class Student:
-    def __init__(self, name, roll_no, age):
-        # private member
-        self.name = name
-        # private members to restrict access
-        # avoid direct data modification
-        self.__roll_no = roll_no
-        self.__age = age
+#polymorphism
+# Python program to demonstrate in-built poly-
+# morphic functions
+ 
+# len() being used for a string
 
-    def show(self):
-        print('Student Details:', self.name, self.__roll_no)
+print(len("geeks"))
+ 
+# len() being used for a list
 
-    # getter methods
-    def get_roll_no(self):
-        return self.__roll_no
+print(len([10, 20, 30])
+# A simple Python function to demonstrate 
+# Polymorphism
+def num(x,y,z = 0):
+  return x + y + z
 
-    # setter method to modify data member
-    # condition to allow data modification with rules
-    def set_roll_no(self, number):
-        if number > 50:
-            print('Invalid roll no. Please set correct roll number')
-        else:
-            self.__roll_no = number
+print(num(3,4))
+print(num(2,5,6))
 
-jessa = Student('Jessa', 10, 15)
-
-# before Modify
-jessa.show()
-# changing roll number using setter
-jessa.set_roll_no(120)
-
-
-jessa.set_roll_no(25)
-jessa.show()
+  
