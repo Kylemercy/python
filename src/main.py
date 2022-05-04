@@ -1,17 +1,24 @@
-class Student:
-    # one argument constructor
-    def __init__(self, name):
-        print("One arguments constructor")
-        self.name = name
+# this i called constructor chaining
+class Vehicle:
+    # Constructor of Vehicle
+    def __init__(self, engine):
+        print('Inside Vehicle Constructor')
+        self.engine = engine
 
-    # two argument constructor
-    def __init__(self, name, age):
-        print("Two arguments constructor")
-        self.name = name
-        self.age = age
+class Car(Vehicle):
+    # Constructor of Car
+    def __init__(self, engine, max_speed):
+        super().__init__(engine)
+        print('Inside Car Constructor')
+        self.max_speed = max_speed
 
-# creating first object
-emma = Student('Emma')
-#this is called constructor overloading
-# creating Second object
-kelly = Student('Kelly', 13)
+class Electric_Car(Car):
+    # Constructor of Electric Car
+    def __init__(self, engine, max_speed, km_range):
+        super().__init__(engine, max_speed)
+        print('Inside Electric Car Constructor')
+        self.km_range = km_range
+
+# Object of electric car
+ev = Electric_Car('1500cc', 240, 750)
+print(f'Engine={ev.engine}, Max Speed={ev.max_speed}, Km range={ev.km_range}')
