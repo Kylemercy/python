@@ -1,100 +1,17 @@
-#polymorphism in classes
-class India:
-    def capital(self):
-        print("New Delhi is the capital of India.")
-    def language(self):
+class Student:
+    # one argument constructor
+    def __init__(self, name):
+        print("One arguments constructor")
+        self.name = name
 
-        print("Hindi is the most widely spoken language of India.")
- 
+    # two argument constructor
+    def __init__(self, name, age):
+        print("Two arguments constructor")
+        self.name = name
+        self.age = age
 
-    def type(self):
-
-        print("India is a developing country.")
- 
-
-class USA:
-
-    def capital(self):
-
-        print("Washington, D.C. is the capital of USA.")
- 
-
-    def language(self):
-
-        print("English is the primary language of USA.")
- 
-
-    def type(self):
-
-        print("USA is a developed country.")
- 
-
-obj_ind = India()
-
-obj_usa = USA()
-for country in(obj_ind,obj_usa):
-  country.capital()
-  country.language()
-  country.type()
-  
-  
-#polymorphism with a function
-class India():
-
-    def capital(self):
-
-        print("New Delhi is the capital of India.")
-
-  
-
-    def language(self):
-
-        print("Hindi is the most widely spoken language of India.")
-
-  
-
-    def type(self):
-
-        print("India is a developing country.")
-
-  
-
-class USA():
-
-    def capital(self):
-
-        print("Washington, D.C. is the capital of USA.")
-
-  
-
-    def language(self):
-
-        print("English is the primary language of USA.")
-
-  
-
-    def type(self):
-
-        print("USA is a developed country.")
- 
-
-def func(obj):
-
-    obj.capital()
-
-    obj.language()
-
-    obj.type()
-
-  
-
-obj_ind = India()
-
-obj_usa = USA()
-
-  
-func(obj_ind)
-func(obj_usa)
-
-  
-
+# creating first object
+emma = Student('Emma')
+#this is called constructor overloading
+# creating Second object
+kelly = Student('Kelly', 13)
