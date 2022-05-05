@@ -1,11 +1,4 @@
-#using constructor to count
-class Employee:
-  count = 0
-  def __init__(self):
-    Employee.count += 1
-    
-    
-emp2 = Employee()
-emp2 = Employee()
-emp2 = Employee()
-print(f"The number of employees is : {Employee.count}")
+print('python is awesome'.replace('python', 'freeCodeCamp'))
+print('python is awesome'.split(","))
+print(' '.join(['python',' is','awesome.']))
+#join i use to join a valuae in a list
