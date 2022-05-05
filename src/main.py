@@ -1,13 +1,13 @@
-class Company:
-    def company_name(self):
-        return 'Google'
+class Student:
+    def __init__(self, roll_no, name):
+        # Instance variable
+        self.roll_no = roll_no
+        self.name = name
 
-class Employee(Company):
-    def info(self):
-        # Calling the superclass method using super()function
-        c_name = super().company_name()
-        print("Jessa works at", c_name)
+s1 = Student(10, 'Jessa')
+print('Instance variable object has')
+print(s1.__dict__)
 
-# Creating object of child class
-emp = Employee()
-emp.info()
+# Get each instance variable
+for key_value in s1.__dict__.items():
+    print(key_value[0], '=', key_value[1])
