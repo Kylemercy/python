@@ -1,15 +1,32 @@
-#A SIMPLE CALCULATOR
-a = float(input('First: '))
-b = float(input('Second: '))
-op = input('Operation (sum/sub/mul/div): ')
+# Use super()
+class Doughnut:
+    def __init__(self, flavor, r_in, r_out, topping):
+        self.insideRadius   = r_in
+        self.outsideRadius  = r_out
+        self.topping = topping
+        self.flavor = flavor
+        
+       #  is wrong. YOu do not need 'self'
 
-if op == 'sum':
-    print(f'a + b = {a+b}')
-elif op == 'sub':
-    print(f'a - b = {a-b}')
-elif op == 'mul':
-    print(f'a * b = {a*b}')
-elif op == 'div':
-    print(f'a / b = {a/b}')
-else:
-    print('Invalid Operation!')
+    def donutarea(self):
+        return 3.1416 * (self.outsideRadius ** 2 - self.insideRadius ** 2)
+    
+    def donutperimeter(self):
+        return 2 * 3.1416 * (self.insideRadius +  self.outsideRadius)
+    
+    def inarea(self):
+      return 2* 3.1416*self.insideRadius ** 2
+    
+      
+    
+class glazedDonut(Doughnut):
+  def __init__(self,flavor,r_in,r_out,topping):
+   super().__init__(flavor, r_in, r_out, topping)
+                          
+emp = glazedDonut("chocolate",4,6,"glazed")
+print("We just made a " + emp.topping + ' ' + emp.flavor + " donut.")
+print("It's area is: ",emp.donutarea())
+print("And it's perimeter is: ")
+print(emp.donutperimeter())
+print("And the inside hollow area is: ")
+print(emp.inarea())
