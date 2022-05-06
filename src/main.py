@@ -10,10 +10,10 @@ class Student(Course):
         self.name = name
 
     def show_student(self):
-        # Accessing class variable
+        # Accessing class variable in an instance method
         print('Before')
         print("Student name:", self.name,"," ,"Course Name:", Student.course)
-        # changing class variable's value
+        # changing class variable's value in a instance method
         print('Now')
         Student.course = "Machine Learning"
         print("Student name:", self.name,"," ,"Course Name:", Student.course)
