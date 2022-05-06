@@ -14,6 +14,8 @@ class Student:
 s1 = Student("mike")
 print(s1.name)
 
+#DIFFERENT WAYS OF ACCESSING CLASS VARIABLE
+
 
 class Student:
     # Class variable
