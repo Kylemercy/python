@@ -1,24 +1,26 @@
-#DIFFERENT WAYS OF CREATING A CLASS VARIABLE
-#WITH DIFFERENT CHILD CLASS
-
 class Course:
     # class variable
     course = "Python"
 
 class Student(Course):
+    # class variable
+    course = "SQL"
 
     def __init__(self, name):
         self.name = name
 
     def show_student(self):
-        # Accessing class variable of parent class
+        # Accessing class variable
         print('Before')
-        print("Student name:", self.name, "Course Name:", Student.course)
- # changing class variable value of base class
+        print("Student name:", self.name,"," ,"Course Name:", Student.course)
+        # changing class variable's value
         print('Now')
         Student.course = "Machine Learning"
-        print("Student name:", self.name, "Course Name:", Student.course)
+        print("Student name:", self.name,"," ,"Course Name:", Student.course)
 
 # creating object of Student class
 stud = Student("Emma")
 stud.show_student()
+
+# parent class course name
+print('Parent Class Course Name:', Course.course)
