@@ -5,11 +5,21 @@
 
 
 #using static method function
-class Employee:
-    def sample(x):
-        print('Inside static method', x)
+class Test:
+  @staticmethod
+  def static1():
+    print("static method 1")
+  
+  def static2():
+    Test.static1()
+  
+  
+  @classmethod
+  def class_method(cls):
+    cls.static2()
 
-# convert to static method
-Employee.sample = staticmethod(Employee.sample)
-# call static method
-Employee.sample(10)
+test = Test()
+test.class_method()
+  
+  
+  
