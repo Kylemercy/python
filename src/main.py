@@ -1,26 +1,31 @@
-class Course:
-    # class variable
-    course = "Python"
+#class method
+#Used to access or modify the class state
+#The class method has a cls parameter 
+#which refers to the class.
 
-class Student(Course):
-    # class variable
-    course = "SQL"
 
-    def __init__(self, name):
+#Create class method using the @classmethod
+# decorator and classmethod() function
+#using @classmethod
+from datetime import date
+
+class Student:
+    def __init__(self, name, age):
         self.name = name
+        self.age = age
 
-    def show_student(self):
-        # Accessing class variable in an instance method
-        print('Before')
-        print("Student name:", self.name,"," ,"Course Name:", Student.course)
-        # changing class variable's value in a instance method
-        print('Now')
-        Student.course = "Machine Learning"
-        print("Student name:", self.name,"," ,"Course Name:", Student.course)
+    @classmethod
+    def calculate_age(cls, name, birth_year):
+        # calculate age an set it as a age
+        # return new object
+        return cls(name, date.today().year - birth_year)
 
-# creating object of Student class
-stud = Student("Emma")
-stud.show_student()
+    def show(self):
+        print(self.name + "'s age is: " + str(self.age))
 
-# parent class course name
-print('Parent Class Course Name:', Course.course)
+jessa = Student('Jessa', 20)
+jessa.show()
+
+# create new object using the factory method
+joy = Student.calculate_age("Joy", 1995)
+joy.show()
