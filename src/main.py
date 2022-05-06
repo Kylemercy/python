@@ -2,41 +2,35 @@ class Student:
     # class variables
     school_name = 'ABC School'
 
-    # constructor
     def __init__(self, name, age):
-        # instance variables
         self.name = name
         self.age = age
 
-    # instance variables
+    # instance method
     def show(self):
-        print(self.name, self.age, Student.school_name)
+        # access instance variables
+        print('Student:', self.name, self.age)
+        # access class variables
+        print('School:', self.school_name)
 
     @classmethod
     def change_School(cls, name):
+        # access class variable
+        print('Previous School name:', cls.school_name)
         cls.school_name = name
+        print('School name changed to', cls.school_name)
 
     @staticmethod
     def find_notes(subject_name):
+        # can't access instance or class attributes
         return ['chapter 1', 'chapter 2', 'chapter 3']
-        
-        
+
 # create object
 jessa = Student('Jessa', 12)
 # call instance method
 jessa.show()
 
-# call class method using the class
+# call class method
 Student.change_School('XYZ School')
 jessa.show()
-# call class method using the object
-jessa.change_School('PQR School')
-jessa.show()
-# call static method using the class
-Student.find_notes('Math')
-# call class method using the object
-jessa.find_notes('Math')
-#A static method doesn’t have access 
-#to the class attribute and instance attributes.
-# Therefore, it cannot modify the class or object
-# state.therefore nothing is modified 
+#jessa school changes to (xyz school)
