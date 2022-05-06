@@ -1,31 +1,31 @@
-#class method
-#Used to access or modify the class state
-#The class method has a cls parameter 
-#which refers to the class.
+class Vehicle:
+    brand_name = 'BMW'
 
-
-#Create class method using the @classmethod
-# decorator and classmethod() function
-#using @classmethod
-class Student:
-    school_name = 'ABC School'
-
-    def __init__(self, name, age):
+    def __init__(self, name, price):
         self.name = name
-        self.age = age
+        self.price = price
 
     @classmethod
-    def change_school(cls, school_name):
-        # class_name.class_variable
-        cls.school_name = school_name
+    def from_price(cls, name, price):
+        # ind_price = dollar * 76
+        # create new Vehicle object
+        return cls(name, (price * 75))
 
-    # instance method
     def show(self):
-        print(f"{self.name} is {self.age} year's old, School: {Student.school_name}")
+        print(self.name, self.price)
 
-jessa = Student('Jessa', 20)
-jessa.show()
+class Car(Vehicle):
+    def average(self, distance, fuel_used):
+        mileage = distance / fuel_used
+        print(self.name, 'Mileage', mileage)
 
-# change school_name
-Student.change_school('XYZ School')
-jessa.show()
+bmw_us = Car('BMW X5', 65000)
+bmw_us.show()
+
+# class method of parent class is available to child class
+# this will return the object of calling class
+bmw_ind = Car.from_price('BMW X5', 65000)
+bmw_ind.show()
+
+# check type
+print(type(bmw_ind))
