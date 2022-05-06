@@ -1,25 +1,24 @@
 class Vehicle:
-  def __init__(self, distance, mileage):
+  def __init__(self,name, distance, mileage):
+    self.name = name
     self.distance = distance
     self.mileage = mileage
   
   
-  def max_speed(self):
-    print(self.distance//self.mileage)
+  def sitting_capacity(self, capacity):
+    return f"The seating capacity of a {self.name} is {capacity} passengers"
+  
+    
 
 
 class Bus(Vehicle):
-  def __init__(self, distance, mileage, colour):
-    super().__init__(distance, mileage)
-    self.colour = colour
-  
+  def sitting_capacity(self,capacity = 50):
+    return super(). sitting_capacity(capacity)
+    
 
 
-ept = Vehicle(500,40)
-ept.max_speed()
+ept = Vehicle("Toyota",500,40)
 print(ept.distance)
 print(ept.mileage)
-set = Bus(800,30,"red")
-set.max_speed()
-print(set.colour)
-  
+emp = Bus("Toyota",500,40)
+print (emp.sitting_capacity())
