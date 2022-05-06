@@ -1,22 +1,36 @@
-#modifying of class method
-class Student:
-    school_name = 'ABC School'
+#static method
+#it can be defined using
+#the @staticmethod decorator or 
+#staticmethod() function.
 
-    def __init__(self, name, age):
+
+class Employee(object):
+
+    def __init__(self, name, salary, project_name):
         self.name = name
-        self.age = age
+        self.salary = salary
+        self.project_name = project_name
 
-    @classmethod
-    def change_school(cls, school_name):
-        cls.school_name = school_name
+    @staticmethod
+    def gather_requirement(project_name):
+        if project_name == 'ABC Project':
+            requirement = ['task_1', 'task_2', 'task_3']
+        else:
+            requirement = ['task_1']
+        return requirement
 
-jessa = Student('Jessa', 20)
-print(Student.change_school('XYZ School'))
-print(Student.school_name)
-
-# delete class method
-del Student.change_school
-
-# call class method
-# it will give error
-print(Student.change_school('PQR School'))
+    # instance method
+    def work(self):
+        # call static method from instance method
+        requirement = self.gather_requirement(self.project_name)
+        print("done", requirement)
+        # this print a list
+    # to print out the items in the list we 
+    #iterate using a for loop
+        for task in requirement:
+            print('Completed', task)
+emp = Employee('Kelly', 12000, 'ABC Project')
+emp1 = Employee('bily', 15800, 'DCA Project')
+emp.work()
+print("\n")
+emp1.work()
