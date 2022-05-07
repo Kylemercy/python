@@ -1,17 +1,19 @@
-class Vehicle:
-    def __init__(self, name, mileage, capacity):
-        self.name = name
-        self.mileage = mileage
-        self.capacity = capacity
+class Car:
+    car_name = "Wheeljack"
+    def move(self):
+        print(self.car_name, "Car is Moving")
 
-    def fare(self):
-        return self.capacity * 100
+class Truck:
+    truck_name = "Optimus Prime"
+    def move(self):
+        print( self.truck_name, "Truck is moving")
 
-class Bus(Vehicle):
-    def fare(self):
-        amount = super().fare()
-        amount += amount * 10 / 100
-        return amount
+class Bike:
+    bike_name = "Elita-One"
+    def move(self):
+        print(self.bike_name, "Bike is moving")
 
-School_bus = Bus("School Volvo", 12, 50)
-print("Total Bus fare is:", School_bus.fare())
+vehicles = [Car(), Truck(), Bike()]
+
+for vehicle in vehicles:
+    vehicle.move()
