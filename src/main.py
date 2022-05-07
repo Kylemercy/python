@@ -1,34 +1,17 @@
 class Vehicle:
-  colour = " white"
+    def __init__(self, name, mileage, capacity):
+        self.name = name
+        self.mileage = mileage
+        self.capacity = capacity
 
-  def __init__(self,name, distance, mileage):
-    self.name = name
-    self.distance = distance
-    self.mileage = mileage
-  
-  
-  def sitting_capacity(self, capacity):
-    return f"The seating capacity of a {self.name} is {capacity} passengers"
-  
-    
-
+    def fare(self):
+        return self.capacity * 100
 
 class Bus(Vehicle):
-  pass
+    def fare(self):
+        amount = super().fare()
+        amount += amount * 10 / 100
+        return amount
 
-class Car(Vehicle):
-  pass
-
-
-
-School_bus = Bus("School Volvo", 180, 12)
-print(School_bus.colour, School_bus.name, "Distance:", School_bus.distance, "Mileage:", School_bus.mileage)
-
-car = Car("Audi Q5", 240, 18)
-print(car.colour, car.name, "Distance:", car.distance, "Mileage:", car.mileage)
-
-  
-
-    
-
-
+School_bus = Bus("School Volvo", 12, 50)
+print("Total Bus fare is:", School_bus.fare())
