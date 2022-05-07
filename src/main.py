@@ -1,4 +1,6 @@
 class Vehicle:
+  colour = " white"
+
   def __init__(self,name, distance, mileage):
     self.name = name
     self.distance = distance
@@ -12,13 +14,21 @@ class Vehicle:
 
 
 class Bus(Vehicle):
-  def sitting_capacity(self,capacity = 50):
-    return super(). sitting_capacity(capacity)
+  pass
+
+class Car(Vehicle):
+  pass
+
+
+
+School_bus = Bus("School Volvo", 180, 12)
+print(School_bus.colour, School_bus.name, "Distance:", School_bus.distance, "Mileage:", School_bus.mileage)
+
+car = Car("Audi Q5", 240, 18)
+print(car.colour, car.name, "Distance:", car.distance, "Mileage:", car.mileage)
+
+  
+
     
 
 
-ept = Vehicle("Toyota",500,40)
-print(ept.distance)
-print(ept.mileage)
-emp = Bus("Toyota",500,40)
-print (emp.sitting_capacity())
