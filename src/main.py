@@ -23,4 +23,3 @@ display()
 print("\n")
 display_info("joy",34)
 
-  
