@@ -1,25 +1,24 @@
 #DECORATORS IN PYTHON
-def decoration_fun(original):
-  def wrapper_fun(*args,**kwargs):
-    #args and kwargs allows our function to 
-    #acept more than one positional argument
+#decorators using class
+class decoration_class(object):
+  def __init__(self, original):
+    self.original = original
   
-    print(f"our wrapper function excuted this code before {original.__name__}.")
-    return original(*args,**kwargs)
-  return wrapper_fun
+  def __call__(self,*args,**kwargs):
+    print(f"our call method excuted this code before {self.original.__name__}.")
+    return self.original(*args,**kwargs)
 
-@decoration_fun
+@decoration_class
 def display():
   print("decorated original function.")
 
-@decoration_fun
+@decoration_class
 def display_info(name,age):
   print(f"display function ran with argument {name}, and {age}")
 
-  
-
-
 display()
 print("\n")
-display_info("joy",34)
+display_info("sid",34)
+  
+
 
