@@ -1,14 +1,24 @@
 import time
 def timmer(func):
-  def wrapper(*args):
-    before = time.time()
-    func(*args)
-    print("function took",time.time() - before,"seconds")
+  def wrapper(*args,**kwargs):
+    start = time.time()
+    rv =  func(*args)
+    total= time.time() - start
+    print("time: ",total)
+    return rv
   return wrapper
     
 @timmer  
-def run():
+def test():
+  for _ in range(1000):
+    pass
+@timmer
+def t2():
   time.sleep(2)
+
+
+  
 #note this function will run ater 2 seconds
 
-run()
+test()
+t2()
