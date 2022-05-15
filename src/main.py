@@ -1,22 +1,15 @@
-#puthon tricks
-words = ["drum","cat","fish"]
-counts = [1,4,6]
-for word,count in zip(words, counts):
-  print(word,":",count)
+def f1(func):
+  def wrapper(*args,**kwargs):
+    print("started")
+    func(*args,**kwargs)
+    #the function that is being wrapped
+    print("ended")
+  return wrapper
+
+@f1
+def f(a,b= 30):
+  print(f"{a} is {b} years old.")
+
+f("ada")
 
 
-  
-#sum
-num = [46,67,89,34,45,67]
-print(sum(num))
-
-# set,use to remove duplicate
-num1 = [2,4,3,2,5,6,5,2,3,7,8,8,6,9,6]
-print(set(num))
-print(list(set(num)))
-print(sorted(num1))
-
-def my_fun(x):
-  return 6*x
-
-print(list(map(my_fun,[1,3,4,2])))
