@@ -1,31 +1,37 @@
-# importing libraries
-import time
-import math
-# decorator to calculate duration
-# taken by any function.
-def calculate_time(func):
-    # added arguments inside the inner1,
-    # if function takes any arguments,
-    # can be added like this.
+#high- order function
+#if a function accept another function as agurment
+#returns it as results it is called ahiger order 
+#function
 
-    def inner1(*args, **kwargs):
-        # storing time before function execution
-        begin = time.time()
-        func(*args, **kwargs)
-        # storing time after function execution
-        end = time.time()
-        print("Total time taken in :  ", func.__name__, end - begin)
+def square(x):
 
-    return inner1
-# this can be added to any function present,
-# in this case to calculate a factorial
-@calculate_time
-def factorial(num):
-    # sleep 2 seconds because it takes very less time
-    # so that you can see the actual difference
-    time.sleep(2)
-    print("factorial of number is  ",math.factorial(10))
-    
-# calling the function.
+  return x*x
 
-factorial(10)
+def cube(x):
+  return x*x*x
+
+
+def my_map(square,arg_list):
+  result = []
+  for i in arg_list:
+    result.append(square (i))
+  
+  return result
+  
+  
+  
+squares = my_map(square,[1,2,3,4,5])
+print(squares)
+
+#to calcute for cube
+def my_map(cube,arg_list):
+  result = []
+  for i in arg_list:
+    result.append(cube(i))
+  
+  return result
+  
+  
+  
+squares = my_map(cube,[1,2,3,4,5])
+print(squares)
