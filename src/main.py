@@ -1,37 +1,14 @@
-#high- order function
-#if a function accept another function as agurment
-#returns it as results it is called ahiger order 
-#function
+#fist class function
+#and closures
+def html_tag(tag):
+  
+  def wrap(txt):
+    print(f' <{tag}> {txt} \<{tag}> ')
+  
+  return wrap
 
-def square(x):
-
-  return x*x
-
-def cube(x):
-  return x*x*x
-
-
-def my_map(square,arg_list):
-  result = []
-  for i in arg_list:
-    result.append(square (i))
+html_p = html_tag("Hi")
+html_p("Nice meeting you!")
   
-  return result
-  
-  
-  
-squares = my_map(square,[1,2,3,4,5])
-print(squares)
-
-#to calcute for cube
-def my_map(cube,arg_list):
-  result = []
-  for i in arg_list:
-    result.append(cube(i))
-  
-  return result
-  
-  
-  
-squares = my_map(cube,[1,2,3,4,5])
-print(squares)
+html_t = html_tag("Bye")
+html_t("Have a nice day")
