@@ -1,9 +1,7 @@
 class Employee:
   raise_amount = 1.02
   num_emp = 0
-
-  # class Variable
-  
+  # class Variable 
   def __init__(self,first,last,pay):
     self.first = first
     self.last = last
@@ -11,9 +9,7 @@ class Employee:
     self.email = first + last + "@company.com"
     Employee.num_emp += 1
     #this increase as the new employee object
-#is created
-  
-  
+#is created  
   def amount_apply(self):
     self.pay = int(self.pay *self.raise_amount)
     print(self.pay)
