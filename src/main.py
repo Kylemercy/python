@@ -1,11 +1,32 @@
+class Employee:
+  raise_amount = 1.02
 
-def plus_one(number):
-     print(f" First: {number + 1}")
-     return number + 1
+  # class Variable
+  
+  def __init__(self,first,last,pay):
+    self.first = first
+    self.last = last
+    self.pay = pay
+    self.email = first + last + "@company.com"
+  
+  
+  def amount_apply(self):
+    self.pay = int(self.pay *self.raise_amount)
+    print(self.pay)
+  
+  def display(self):
+    print(f"fullname: {self.first} {self.last}")
+  
  
-def function_call(function):
-     number_to_add = 5
-     print(f" Second: {function(number_to_add)}")
-     return function(number_to_add)
- 
-function_call(plus_one)
+  
+emp1 = Employee("sid","kai",6000)
+emp2 = Employee("dats","mods",7590)
+
+
+print(emp1.email)
+emp1.display()
+print (emp1.pay)
+print(emp1.raise_amount)
+emp1.amount_apply()
+emp2.amount_apply()
+print(emp1.__dict__)
