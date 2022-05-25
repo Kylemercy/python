@@ -29,19 +29,24 @@ class Employee:
   #input is pass as a string separated by an _
   def from_string(cls,emp_str):
     first,last,pay = emp_str.split("_")
-    return cls(first,last,pay)
-    
-#emp1 = Employee("sid","kai",6000)
-#emp2 = Employee("dats","mods",7590)
-#when our input is in form of a string format
-emp1 = ("sandy_gat_6700")
-emp2 =("mike_tarh_8900")
-emp3 = ("dirt_xander_4600")
+    return cls(first,last,int(pay))
 
-new_emp1 = Employee.from_string(emp1)
-new_emp2 = Employee.from_string(emp2)
-print(new_emp1.email)
-print(new_emp2.email,new_emp2.first)
-new_emp1.display()
+  @staticmethod
+  def is_workday(day):
+    if day.weekday() == 5 or day.weekday() == 6:
+  
+      print("its a weekday")
+    
+    else:
+      print("Not a weekday") 
+    
+emp1 = Employee("sid","kai",6000)
+emp2 = Employee("dats","mods",7590)
+from datetime import datetime
+today = datetime.today()
+my_date = datetime.date(today)
+print(my_date)
+print(Employee.is_workday(my_date))
+
 
 
