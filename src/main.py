@@ -16,22 +16,28 @@ class Employee:
   
   def display(self):
     print(f"fullname: {self.first} {self.last}")
-#creating a sub_class developer
-class Developer(Employee):
-  def __init__(self,first,last,pay, prog_lang):
-    super().__init__(first,last,pay)
-    self.prog_lang = prog_lang
   
-
- 
+  def __repr__(self):
+    return (f"Employee: {self.first},{self.last},{self.pay}")
+  
+  def __str__(self):
+    return (f"{self.display}-{self.email}")
+  
+#special or dunder method
+#use for info overloading
+#using the repr and str magic method
+#repr is use for debugging by programers
+#str is meant for the reader
      
-dev1 = Developer("sid","kai",6000,"python")
-dev2 =Developer("dats","mods",7590,"java")
-#print(help(Developer))
-print(dev1.pay)
-dev1.amount_apply()
-print(dev1.email)
-dev1.display()
-print(dev1.prog_lang)
-
-
+dev1 =Employee("sid","daje",6000)
+dev2 = Employee("dash","qote",7000)
+#while str is meant for the in user
+print(str(dev1))
+print(str(dev2))
+#repr makes the code more readable 
+#for the programmer
+print(repr(dev1))
+print(repr(dev2))
+#or you can do this
+print(dev1.__str__())
+print(dev1.__repr__())
