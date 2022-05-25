@@ -22,7 +22,9 @@ class Employee:
 emp1 = Employee("sid","kai",6000)
 emp2 = Employee("dats","mods",7590)
 
-
+#mosifying the clasd instance outside the class
+Employee.raise_amount = 1.05
+# this affects all other object created
 print(emp1.email)
 emp1.display()
 print (emp1.pay)
@@ -30,3 +32,6 @@ print(emp1.raise_amount)
 emp1.amount_apply()
 emp2.amount_apply()
 print(emp1.__dict__)
+#this only modify the raise_amount of emp1
+emp1.raise_amount = 1.03
+print(emp1.raise_amount)
