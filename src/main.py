@@ -1,5 +1,6 @@
 class Employee:
   raise_amount = 1.02
+  num_emp = 0
 
   # class Variable
   
@@ -8,6 +9,9 @@ class Employee:
     self.last = last
     self.pay = pay
     self.email = first + last + "@company.com"
+    Employee.num_emp += 1
+    #this increase as the new employee object
+#is created
   
   
   def amount_apply(self):
@@ -16,22 +20,23 @@ class Employee:
   
   def display(self):
     print(f"fullname: {self.first} {self.last}")
-  
- 
-  
+ #creating a class method
+  @classmethod
+  def set_raise_amount(cls,amount):
+    cls.raise_amount = amount
+
 emp1 = Employee("sid","kai",6000)
 emp2 = Employee("dats","mods",7590)
 
-#mosifying the clasd instance outside the class
-Employee.raise_amount = 1.05
-# this affects all other object created
-print(emp1.email)
-emp1.display()
-print (emp1.pay)
+print(Employee.num_emp)
+print(Employee.raise_amount)
 print(emp1.raise_amount)
-emp1.amount_apply()
-emp2.amount_apply()
-print(emp1.__dict__)
-#this only modify the raise_amount of emp1
-emp1.raise_amount = 1.03
+print(emp2.raise_amount)
+#setting the raise amount
+Employee.set_raise_amount(1.07)
+#the new raise amount is 1.07
+#this is modified using a class method
+print(Employee.num_emp)
+print(Employee.raise_amount)
 print(emp1.raise_amount)
+print(emp2.raise_amount)
