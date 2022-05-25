@@ -12,16 +12,23 @@ class Employee:
 #is created  
   def amount_apply(self):
     self.pay = int(self.pay *self.raise_amount)
-    print(self.pay)
+    return (self.pay)
   
-  def display(self):
-    print(f"fullname: {self.first} {self.last}")
+  def fullname(self):
+    return "{} {}". format(self.first,self.last)
   
   def __repr__(self):
     return (f"Employee: {self.first},{self.last},{self.pay}")
   
   def __str__(self):
     return (f"{self.display}-{self.email}")
+  
+  def __add__(self,other):
+    return self.pay + other.pay
+ 
+  def __len__(self):
+    return len(self.fullname())
+  
   
 #special or dunder method
 #use for info overloading
@@ -31,13 +38,10 @@ class Employee:
      
 dev1 =Employee("sid","daje",6000)
 dev2 = Employee("dash","qote",7000)
-#while str is meant for the in user
-print(str(dev1))
-print(str(dev2))
-#repr makes the code more readable 
-#for the programmer
-print(repr(dev1))
-print(repr(dev2))
-#or you can do this
-print(dev1.__str__())
-print(dev1.__repr__())
+print(dev1.fullname())
+print(dev1+ dev2)
+print(len(dev2))
+print(dev1.amount_apply())
+#note when you use return you have to print out
+#your methods
+
