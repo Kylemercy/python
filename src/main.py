@@ -1,5 +1,5 @@
 class Employee:
-  raise_amount = 1.02
+  raise_amount = 1.05
   num_emp = 0
   # class Variable 
   def __init__(self,first,last,pay):
@@ -16,33 +16,22 @@ class Employee:
   
   def display(self):
     print(f"fullname: {self.first} {self.last}")
- #creating a class method
-  @classmethod
-  def set_raise_amount(cls,amount):
-    cls.raise_amount = amount
-  @classmethod
-  #creating a alternative method for if our 
-  #input is pass as a string separated by an _
-  def from_string(cls,emp_str):
-    first,last,pay = emp_str.split("_")
-    return cls(first,last,int(pay))
-
-  @staticmethod
-  def is_workday(day):
-    if day.weekday() == 5 or day.weekday() == 6:
+#creating a sub_class developer
+class Developer(Employee):
+  def __init__(self,first,last,pay, prog_lang):
+    super().__init__(first,last,pay)
+    self.prog_lang = prog_lang
   
-      print("its a weekday")
-    
-    else:
-      print("Not a weekday") 
-    
-emp1 = Employee("sid","kai",6000)
-emp2 = Employee("dats","mods",7590)
-from datetime import datetime
-today = datetime.today()
-my_date = datetime.date(today)
-print(my_date)
-print(Employee.is_workday(my_date))
 
+ 
+     
+dev1 = Developer("sid","kai",6000,"python")
+dev2 =Developer("dats","mods",7590,"java")
+#print(help(Developer))
+print(dev1.pay)
+dev1.amount_apply()
+print(dev1.email)
+dev1.display()
+print(dev1.prog_lang)
 
 
