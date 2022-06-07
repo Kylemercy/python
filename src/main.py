@@ -1,34 +1,21 @@
-def reversearray(arr,start, end):
-  while (start< end):
-    temp = arr[start]
-    arr[start] = arr[end]
-    arr[end] = temp
-    start += 1
-    end -= 1
-    
-
-def rotate(arr,d):
-  if d == 0:
-    return
-  n = len(arr)
-  d = d %n
-  reversearray(arr,0,d-1)
-  reversearray(arr,d,n-1)
-  reversearray(arr,0,n-1)
-
-def printarray(arr):
-  for i in range (0,len(arr)):
-    print(arr[i],end = " ")
-
-
-arr = [1, 2, 3, 4, 5, 6, 7]
-n = len(arr)
-d = 2
+def rotate(arr, n):
+    x = arr[n - 1]
+     
+    for i in range(n - 1, 0, -1):
+        arr[i] = arr[i - 1];
+         
+    arr[0] = x;
  
-rotate(arr, 2)  # Rotate array by 2
-printarray(arr)
-#reversal algorithm
+ 
+# Driver function
+arr= [1, 2, 3, 4, 5]
+n = len(arr)
 
-  
-
-  
+rotate(arr, n)
+ 
+print ("\nRotated array is")
+for i in range(0, n):
+    print (arr[i],end = " ")
+    
+    
+#rotating an array in a clockwise direction 
