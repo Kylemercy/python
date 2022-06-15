@@ -1,32 +1,11 @@
-#checking of two words are anagram
-''' One string is an anagram of another
- if the second is simply a rearrangement
- of the first. For example,
-  'heart' and 'earth' are anagram   '''
-def anagram(s1,s2):
-  a_list1 = list(s1)
-  a_list2 = list(s2)
+def tower(n,start, end, middle):
+  #tower of Hanoi using recursion
+  if n == 1:
+    print(f"move {n},from tower {start} to tower {end}")
   
-  a_list1.sort()
-  a_list2.sort()
-# here the list i already sorted out'''  
-  matches = True
-  pos = 0
-  
-  while pos < len(s1) and matches:
-    if a_list1[pos] == a_list2[pos]:
-      pos += 1
-    else:
-      matches = False
-   #therefore the loops break
-  return "Not an anagram."
-
-
-word = anagram('abcde','ecad')
-print(word)
-    
-# writing an anagram using sorting and comparing m
-#method   
-  
-    
-  
+  else:
+    tower(n-1,start,middle,end)
+    # move from start to end using middle
+    print(f"move {n},from tower {start} to tower {end}")
+    tower(n-1, middle, end, start)
+tower(4,"A","C","B")
