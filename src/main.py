@@ -1,11 +1,16 @@
-def tower(n,start, end, middle):
-  #tower of Hanoi using recursion
-  if n == 1:
-    print(f"move {n},from tower {start} to tower {end}")
+#checking whether an array is sorted
+def array_sorted(a):
+  if len(a) == 1:
+    return True
+  return a[0] <= a[1]
   
-  else:
-    tower(n-1,start,middle,end)
-    # move from start to end using middle
-    print(f"move {n},from tower {start} to tower {end}")
-    tower(n-1, middle, end, start)
-tower(4,"A","C","B")
+  
+
+a = [40,20,30,80]
+print(array_sorted(a))
+
+
+b = [20,30,40,50,80]
+print(array_sorted(b))
+
+
