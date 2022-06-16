@@ -1,7 +1,11 @@
-fruits = ["apples","oranges","bananas","melons"]
-prices = [20,10,5,15]
-quantities = [5,7,3,4]
+from itertools import zip_longest
+L1 = [1,2,3,4,5]
+L2 = ['a','b','c','d']
 
-for fruit, price, quantity in zip(fruits,prices,quantities):
-  print(f"You bought {quantity} {fruit} for ${price*quantity}")
-  
+zipL_L1L2 = zip_longest(L1,L2,)
+
+print(list(zipL_L1L2))
+''' Notice how the item 5 from
+ L1 is still included.
+  But as there's no matching item in L2, 
+  the second element in the last tuple is None'''
