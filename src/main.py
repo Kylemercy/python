@@ -1,16 +1,30 @@
-#checking whether an array is sorted
-def array_sorted(a):
-  if len(a) == 1:
-    return True
-  return a[0] <= a[1]
-  
-  
+#zip
+# unpacking of zip
+coordinate = ['x', 'y', 'z']
+value = [3, 4, 5]
 
-a = [40,20,30,80]
-print(array_sorted(a))
+result = zip(coordinate, value)
+result_list = list(result)
+print(result_list)
 
+c, v =  zip(*result_list)
+print('c =', c)
+print('v =', v)
 
-b = [20,30,40,50,80]
-print(array_sorted(b))
+numbersList = [1, 2, 3]
+str_list = ['one', 'two']
+numbers_tuple = ('ONE', 'TWO', 'THREE', 'FOUR')
 
+# Notice, the size of numbersList
+# and numbers_tuple is different
+result = zip(numbersList, numbers_tuple)
 
+# Converting to set
+result_set = set(result)
+print(result_set)
+
+result = zip(numbersList, str_list, numbers_tuple)
+
+# Converting to set
+result_set = set(result)
+print(result_set)
