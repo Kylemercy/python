@@ -1,16 +1,7 @@
+fruits = ["apples","oranges","bananas","melons"]
+prices = [20,10,5,15]
+quantities = [5,7,3,4]
 
-# Python code to demonstrate the application of
-# zip()
- 
-# initializing list of players.
-
-players = ["Sachin", "Sehwag", "Gambhir", "Dravid", "Raina"]
- 
-# initializing their scores
-
-scores = [100, 15, 17, 28, 43]
- 
-# printing players and scores.
-
-for pl, sc in zip(players, scores):
-  print(f"player: {pl}, scores : {sc}")
+for fruit, price, quantity in zip(fruits,prices,quantities):
+  print(f"You bought {quantity} {fruit} for ${price*quantity}")
+  
