@@ -1,14 +1,18 @@
-# recursive Python Program to copy one String
-# to another.
- 
-# Function to copy one string to other
-def copy_str(x,y):
-    if len(y)==0:
-        return x
-    else:
-        c = copy_str(x,(y)[1:-1])
-        return c
-x = input()
-y = input()
-print(copy_str(x,y))
- 
+#import string
+def ispangram(str):
+  alphabet = "abcdefghijklmnopqrstvuwxyz"
+  for char in alphabet:
+    if char not in str.lower():
+      return False
+  return True
+
+str = " the five boxing wizards jump quickly."
+if ispangram(str) == True:
+  print("yes its a pangram")
+else:
+  print("No it's not a pangram")
+
+
+
+    
+  
