@@ -1,18 +1,10 @@
-#import string
-def ispangram(str):
-  alphabet = "abcdefghijklmnopqrstvuwxyz"
-  for char in alphabet:
-    if char not in str.lower():
-      return False
-  return True
-
-str = " the five boxing wizards jump quickly."
-if ispangram(str) == True:
-  print("yes its a pangram")
+from string import ascii_lowercase as alpha_lower
+def pangram(s):
+  return set(alpha_lower) - set(s.lower()) == set([])
+s = input("Enter a sentence: ")
+if pangram(s) == True:
+    print("The string is a pangram")
 else:
-  print("No it's not a pangram")
-
-
-
-    
+    print("the string is not a pangram")
   
+#checking a pangram using set
