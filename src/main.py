@@ -3,20 +3,16 @@ class node:
   def __init__(self,data = None):
     self.data = data
     self.next = None
-
 class linked:
   def __init__(self):
-    self.head = node()
-  
-  
+    self.head = node()  
   def append(self,data):
     new_node = node(data)
     # calling the class node and assigning
    # it to a newnode
     cur_node = self.head
     while cur_node.next != None:
-      cur_node = cur_node.next
-    
+      cur_node = cur_node.next   
     cur_node.next = new_node
     # here we traverse the list till our curr_node
 # becomes none meaning we are at the end of the
@@ -27,7 +23,7 @@ class linked:
     while cur_node.next != None:
       cur_node = cur_node.next
       total += 1
-    print( total)
+    return ( total)
   def display(self):
     elem = []
     cur = self.head
@@ -35,7 +31,16 @@ class linked:
       cur = cur.next
       elem.append(cur.data)
     print(elem)
-
+  def get(self, index):
+    if index >= self.length():
+      print("Error 'Get ' index is out of range")
+      return None
+    cur_index = 0
+    curr_node = self.head
+    while True:
+      curr_node = curr_node.next
+      if cur_index == index:return curr_node.data
+      cur_index += 1
 n1= linked()
 n1.display()
 n1.append("egg")
@@ -43,9 +48,8 @@ n1.append("fish")
 n1.append("bread")
 n1.append("milk")
 n1.display()
-n1.length()
-  
-    
+print( n1.length())
+print(n1.get(2) ) 
   
 
   
