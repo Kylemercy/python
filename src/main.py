@@ -1,48 +1,60 @@
-'''using another method of creating a singly
- linked lists'''
+#linked list
+class node:
+  def __init__(self,data = None):
+    self.data = data
+    self.next = None
+
 class linked:
-
-  def __init__(self, value, nextnode = None):
-    self.value = value
-    self.nextnode = nextnode  
-class single_list:
-  def __init__(self, head = None):
-    #this help keep track of the head of the list
-    self.head = head
+  def __init__(self):
+    self.head = node()
   
-  def insert(self, value):
-      node = linked(value)
-      
-      if self.head is None:
-        self.head = node
-        return
-      current_node =  self.head
-        # value i the element we want to insert
   
-    # we create a node with the value we
-#want to insert     
-#here it checks if the node is none,if so the
-#the value inserted becomes our head     
-      while True:
-        if current_node.nextnode is None:
-          current_node.nextnode = node
-          break
-        current_node = current_node.nextnode
-# this traverse through the list if incase
-#when the node points to a none value we 
-#are at the till then node is then inserted there
-        
-  def printlist(self):
-     current_node = self.head
-     while current_node is not None:
-       print(current_node.value,end =  " > ")
-       current_node = current_node.nextnode
-     
-     print("None")
+  def append(self,data):
+    new_node = node(data)
+    # calling the class node and assigning
+   # it to a newnode
+    cur_node = self.head
+    while cur_node.next != None:
+      cur_node = cur_node.next
+    
+    cur_node.next = new_node
+    # here we traverse the list till our curr_node
+# becomes none meaning we are at the end of the
+#list we then append our new node
+  def length(self):
+    cur_node = self.head
+    total = 0
+    while cur_node.next != None:
+      cur_node = cur_node.next
+      total += 1
+    print( total)
+  def display(self):
+    elem = []
+    cur = self.head
+    while cur.next != None:
+      cur = cur.next
+      elem.append(cur.data)
+    print(elem)
 
-ll = single_list()
-ll.printlist()
-ll.insert(8)
-ll.printlist()
-ll.insert(3)
-ll.printlist()
+n1= linked()
+n1.display()
+n1.append("egg")
+n1.append("fish")
+n1.append("bread")
+n1.append("milk")
+n1.display()
+n1.length()
+  
+    
+  
+
+  
+
+    
+  
+   
+    
+  
+  
+
+  
