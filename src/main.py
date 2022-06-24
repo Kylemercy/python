@@ -1,155 +1,169 @@
 class Node:
-  def __init__(self,data = None,next= None):
+  def __init__(self,data = None,next =  None ,prev = None):
     self.data = data
+    self.prev = prev
     self.next = next
   
-class Linked:
+class doubly_linked:
   def __init__(self):
     self.head = None
-    
   
-  def insert_begining(self,data):
-    new_node = Node(data, self.head)
-    self.head = new_node
- 
-  def print(self):
+  def print_forward(self):
     if self.head is None:
-        print("list is empty")
-        return
-    itr = self.head
+      print("double linked list is empty")
+      return
+    
+    cur = self.head
     str_itr = ' '
-    while itr:
-      str_itr += str(itr.data) + ' >> '
-      itr = itr.next
-    print(str_itr)
-  def insert_end(self,data):
-    if self.head is None:
-      self.head = Node(data,None)
-      return
- # this checks if the lsit is empty,if so
-# the new node becomes the head,and the next,node
-# is node    
-    itr = self.head
-    while itr.next:
-      itr = itr.next
-# incase where the list is not empty,it iterates
-# until the next node is none then append the new
-# node at none
-    itr.next = Node(data,None)
-    # the new node(data) is added and the nxt node 
-    # become none
-  
-  def get_length(self):
-    itr = self.head
-    count = 0
-    while itr:
-      count += 1
-      itr = itr.next
-    return count
-  def remove(self,index):
-    if index< 0 or index >= self.get_length():
-      print(" invalid index ")
-      return
-    
-    if index == 0:
-      self.head = self.head.next
-      return
-    count = 0
-    itr = self.head
-    while itr:
-      if count == index - 1:   
-# this stops at the previous index of the element
-# of the element we want to remove
-        itr.next = itr.next.next
-        break
-        # here the element we went to remove now
-# links the previous element we its next element
-    
-      itr.next 
-      count += 1
-  def insert_data_at(self,index,data):
-      if index< 0 or index >= self.get_length():
-        print(" invalid index ")
-        return
-      if index == 0:
-        self.insert_begining(data)
-        return
-      count = 0
-      cur = self.head
-      while cur:
-        if count == index -1:
-          new_node = Node(data,cur.next)
-       #note index - 1,means previous node
-          cur.next = new_node
-          break
-        
-        cur.next
-  
-      count += 1
+    while cur:
+      str_itr += str(cur.data) + ' >> '
+      cur = cur.next
    
-  def insert_value(self,data_list):
-     self.head = None
-     for data in data_list:
-       self.insert_end(data)
-         
-    
+    print(str_itr)
   
-  def insert_value_after(self,data_after,data_insert):
-     if self.head is None:
-       return
-     if self.head.data == data_after:
-       self.head.next = Node( data_insert,self.head.next)
-       return
-     
-     itr = self.head
-     while itr:
-       if itr.data == data_after:
-         itr.next = Node(data_insert,itr.next)
-         break
-       itr = itr.next
-  def remove_value(self,data):
+  def get_last_node(self):
+    cur = self.head
+    while cur.next:
+      cur= cur.next
+    
+    return cur 
+  
+  def print_backward(self):
+    if self.head is None:
+      print("double linked list is empty")
+      return
+    last_node = self.get_last_node()
+    str_itr = ' '
+    cur = last_node
+    while cur:
+      str_itr += str(cur.data) + ' >> '
+      cur = cur.prev
+      
+    print("Doubly_linked list in reverse order: \n",str_itr)
+ 
+  def get_length(self):
     if self.head == None:
       return
-    if self.head.data == data:
-      self.head = self.head.next
+    cur = self.head
+    count = 0
+    while cur:
+      count += 1
+      cur = cur.next
+     
+    return count
+  def insert_begining(self,data):
+    if self.head == None:
+      new_node = Node(data,self.head,None)
+      self.head = new_node
+    
+    else:
+      new_node = Node(data,self.head,None)
+      self.head.prev = new_node
+      self.head = new_node
+  
+  def insert_end(self,data):
+    if self.head == None:
+      self.head = Node(data,None,None)
       return
     
-    itr = self.head
-    while itr.next:
-      if itr.next.data == data:
-        itr.next = itr.next.next
-        break
-      itr = itr.next
+    cur = self.head
+    while cur.next:
+      cur = cur.next
+        
+    cur.next = Node(data,None,cur)
+      #next node is none ad prev is our last_node
+  def insert_at(self,index,data):
+    if index <= 0 or index > self.get_length():
+       print("Invalid index")
+     
+    if index == 0:
+       self.insert_begining(data)
+       return
+    count = 0
+    cur = self.head
+    while cur:
+      if count == index -1:
+         #this stop at the prev node before the
+         #one we want to change
+         new_node = Node(data,cur.next,cur)
+         cur.next = new_node
+         
+         if new_node.next:
+           new_node.next.prev = new_node
+         
+         cur.next = new_node
+         break
+      cur = cur.next
+      count += 1
+  def remove_at(self, index):
+    if index <= 0 or index > self.get_length():
+       print("Invalid index")
+     
+    if index == 0:
+       self.head = self.head.next
+       self.head.prev = None
+       return
+    count = 0
+    cur = self.head
+    while cur:
+      if count == index :
+        cur.prev.next = cur.next
+        if cur.next :
+          cur.prev.next = cur.next
+          break
+      cur = cur.next
+      count += 1
+  def insert_values(self,data_list):
+    self.head = None
+    for data in data_list:
+      self.insert_end(data)
+            
+ 
+if __name__ == '__main__':
+    ll = doubly_linked()
+    ll.insert_values(["banana","mango","grapes","orange"])
+    ll.print_forward()
+    ll.print_backward()
+    ll.insert_end("figs")
+    ll.print_forward()
+    ll.insert_at(0,"jackfruit")
+    ll.print_forward()
+    ll.insert_at(6,"dates")
+    ll.print_forward()
+    ll.insert_at(2,"kiwi")
+    ll.print_forward()
+    ll.remove_at(1)
+    ll.print_forward()
+    print("length of list:", ll.get_length())
+      
+     
+     
+   
+      
+        
       
     
     
+  
+  
+    
+    
+    
+      
     
   
+  
    
-  
-if __name__ == '__main__':
-  
-
-  ll = Linked()
-  ll.insert_value(["banana","mango","grapes","orange"])
-  ll.print()
-  print("\n")
-  ll.insert_begining("fish")
-  ll.insert_end("potato")
-  ll.insert_data_at(1,"grape")
-  ll.insert_value_after("mango","apple")
-  ll.remove_value("grapes")
-  ll.print()
-  print("length:",ll.get_length())
-  
-  
-  
-  
+   
  
-
- 
+  
+    
+    
+  
+  
+    
+  
 
   
 
- 
   
