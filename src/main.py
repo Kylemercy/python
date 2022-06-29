@@ -1,14 +1,13 @@
 #recursion
-def russian_doll(doll):
-  if doll == 1:
-    print("All the dolls are opened")
-    return
+def recursive_method(n):
+  if n < 1:
+    print("n is lesss than one")
   
   else:
-    russian_doll(doll-1)
-    return None
+    recursive_method(n-1)
+    print(n)
 
-russian_doll(1)
-   
+recursive_method(5)
   
+
   
