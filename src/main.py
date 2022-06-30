@@ -1,13 +1,10 @@
-#recursion
-def recursive_method(n):
-  if n < 1:
-    print("n is lesss than one")
-  
+def fibanocci(n):
+  assert n >= 0 and n == int(n)," invalid input"
+
+  if n in(0,1):
+    return n
   else:
-    recursive_method(n-1)
-    print(n)
-
-recursive_method(5)
+    return fibanocci(n-1) + fibanocci(n - 2)
   
-
   
+print(fibanocci(-1))
