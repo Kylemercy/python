@@ -1,11 +1,20 @@
-def fibonacci(n):
-  assert n >= 0 and n == int(n)," invalid input"
-
-  if n in(0,1):
-    return n
-  else:
-    return fibonacci(n-1) + fibonacci(n - 2)
+def fib_num(n):
+  a = 0
+  b = 1
+  print(a)
+  print(b)
+  for i in range(2,n):
+    
+   if n == 1:
+    print(a)
+  
+   else:
+    c = a + b
+    a = b
+    b = c
+    print(c)
+    
   
   
-print(fibonacci(7))
-#recursive Fibonacci 
+fib_num(6)
+#prints the Fibonacci numbers 
