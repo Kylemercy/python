@@ -1,20 +1,14 @@
 def fib_num(n):
-  a = 0
-  b = 1
-  print(a)
-  print(b)
-  for i in range(2,n):
+  if n == 0:
+    return 0
+  if n == 1:
+    return 1
     
-   if n == 1:
-    print(a)
+  else:
+    return fib_num(n-2) + fib_num(n-1)
   
-   else:
-    c = a + b
-    a = b
-    b = c
-    print(c)
-    
+for i in range(10):
+  print(fib_num(i))
+
   
   
-fib_num(6)
-#prints the Fibonacci numbers 
