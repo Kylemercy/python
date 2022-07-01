@@ -1,22 +1,12 @@
-# finding the greatest common divisor of two numbers
-# finding gcd using elucidean algorithm
-def gcd(x,y):
-  assert int(x) == x and int(y) == y,"Number must be integers only"
-  if x < 0:
-    x = -1 * x
-  if y < 0:
-    y = -1 * y
-  
-  if y == 0:
-    return x
-  
-  
+#converting from decimal to binary
+def binary(n):
+  assert int(n) == n,"the number must be an integer"
+  if n == 0:
+    return 0
+    # here tje function doesn't return any value
   else:
-    return gcd(y,x%y)
+    return n%2 + 10 * binary(int(n/2))#or use//
+    #to divide without using int
 
-print(gcd(45.0,-3.6))
-  
-  
-  
-
+print(binary(1.5))
   
