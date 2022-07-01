@@ -1,12 +1,16 @@
-#converting from decimal to binary
-def binary(n):
-  assert int(n) == n,"the number must be an integer"
-  if n == 0:
-    return 0
-    # here tje function doesn't return any value
+#power of a number
+def power(base,exp):
+  assert int(xp) ==xp and xp < 0,"exponent must be a positive integer"
+  if exp == 0:
+    return 1
+  if exp == 1:
+    return base
   else:
-    return n%2 + 10 * binary(int(n/2))#or use//
-    #to divide without using int
-
-print(binary(1.5))
+    return base * power(base,exp -1)
+  
+print(power(2,7))
+'''note a each recursive call our exponent(exp)
+keeps o decreasing until exp becomes 1, then it 
+return te base '''
+  
   
