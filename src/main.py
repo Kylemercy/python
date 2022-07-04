@@ -1,12 +1,9 @@
-def find_maxnum(n):
-  biggest_num = array[0]
-  for num in range(1,len(array)):
-    if array[num] > biggest_num:
-      biggest_num = array[num]
-  print(biggest_num)
+#finding biggest elements in a list using recursion
+def find_max(sample,n):
+  if n == 1:
+    return sample[0]
+  return max(sample[n-1],find_max(sample,n-1))
 
-
-array = [3,4,1,9,11,163,6,18]
-find_maxnum(array)
-    
-  
+sample = [34,16,80,56,13,89,100,200,6]
+n = 9
+print(find_max(sample,n))
